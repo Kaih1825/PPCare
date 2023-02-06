@@ -12,6 +12,9 @@
         android:theme="@style/Theme.疫苗護照PPCare"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.edit_vo"
+            android:exported="false" />
+        <activity
             android:name=".Activities.edit_pwd"
             android:exported="false" />
         <activity

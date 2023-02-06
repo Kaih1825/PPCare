@@ -386,6 +386,7 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/confirn_button_bac"
+                android:textColor="@color/white"
                 android:text="註冊" />
 
             <LinearLayout

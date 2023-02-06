@@ -1,10 +1,12 @@
 package com.example.ppcare.Activities
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.KeyEvent
+import android.view.View
 import android.widget.TextView
 import com.example.ppcare.R
 import kotlinx.android.synthetic.main.activity_edit_pwd.*
@@ -13,6 +15,11 @@ class edit_pwd : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_pwd)
+        window.apply {
+            decorView.systemUiVisibility=View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            statusBarColor=Color.TRANSPARENT
+            navigationBarColor=Color.TRANSPARENT
+        }
         back.setOnClickListener {
             finish()
         }

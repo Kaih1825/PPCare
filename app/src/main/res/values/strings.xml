@@ -1,4 +1,27 @@
 <resources>
     <string name="app_name">防疫照護平台</string>
-
+    <string-array name="voTypeArray">
+        <item>莫德納 - Moderna</item>
+        <item>高端 - Medigen</item>
+        <item>A Z - AstraZeneca</item>
+        <item>B N T - BioNTech</item>
+    </string-array>
+    <string-array name="voCountArray">
+        <item>第１劑</item>
+        <item>第２劑</item>
+        <item>第３劑</item>
+        <item>第４劑</item>
+    </string-array>
+    <string-array name="voPlaceArray">
+        <item>臺大醫院</item>
+        <item>慈濟醫院</item>
+        <item>全民醫院</item>
+        <item>衛生福利部臺中醫院</item>
+        <item>林森醫院</item>
+        <item>馬偕紀念醫院</item>
+        <item>友仁醫院</item>
+        <item>高雄市立聯合醫院</item>
+        <item>豐安醫院</item>
+        <item>衛生福利部臺南醫院</item>
+    </string-array>
 </resources>
