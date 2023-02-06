@@ -9,45 +9,45 @@ import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.KeyEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.view.drawToBitmap
 import coil.load
 import coil.transform.BlurTransformation
 import com.example.ppcare.R
-import kotlinx.android.synthetic.main.activity_register_screen.*
+import kotlinx.android.synthetic.main.activity_set_per_info.*
 import org.json.JSONArray
 
-class RegisterScreen : AppCompatActivity() {
+class set_per_info : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register_screen)
+        setContentView(R.layout.activity_set_per_info)
         window.apply {
             decorView.systemUiVisibility= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            statusBarColor=Color.TRANSPARENT
-            navigationBarColor=Color.TRANSPARENT
-        }
-        back.setOnClickListener {
-            finish()
+            statusBarColor= Color.TRANSPARENT
+            navigationBarColor= Color.TRANSPARENT
         }
 
-        var cityAdapter=ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,getCityArray())
+        var cityAdapter=
+            ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,getCityArray())
         spr_city.adapter=cityAdapter
-        spr_city.onItemSelectedListener=object :AdapterView.OnItemSelectedListener{
+        spr_city.onItemSelectedListener=object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 var countryArray=getCountryArray(spr_city.selectedItem.toString())
-                var countryAdapter=ArrayAdapter(applicationContext,android.R.layout.simple_spinner_dropdown_item,countryArray)
+                var countryAdapter= ArrayAdapter(applicationContext,android.R.layout.simple_spinner_dropdown_item,countryArray)
                 spr_country.adapter=countryAdapter
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
-        edt_name.addTextChangedListener(object:TextWatcher{
+        back.setOnClickListener {
+            finish()
+        }
+
+        edt_name.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -61,7 +61,7 @@ class RegisterScreen : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {}
 
         })
-        edt_tel.addTextChangedListener(object:TextWatcher{
+        edt_tel.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -76,7 +76,7 @@ class RegisterScreen : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {}
 
         })
-        edt_id.addTextChangedListener(object :TextWatcher{
+        edt_id.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -98,7 +98,7 @@ class RegisterScreen : AppCompatActivity() {
             }
 
         })
-        edt_cardId.addTextChangedListener(object : TextWatcher{
+        edt_cardId.addTextChangedListener(object : TextWatcher {
             var del=false
             var tmp=""
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -125,83 +125,21 @@ class RegisterScreen : AppCompatActivity() {
             }
 
         })
-        edt_email.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                var regex="""[\sA-Za-z0-9._-]+@[\sA-Za-z0-9._-]+\.[\sA-Za-z]{2,4}""".toRegex()
-                if(!regex.containsMatchIn(edt_email.text)){
-                    edt_email.error="格式錯誤\n\n\n"
-                }
-                regex="""\s""".toRegex()
-                if(regex.containsMatchIn(edt_email.text)){
-                    edt_email.error="含有空格且格式錯誤\n\n\n"
-                }
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-            }
-
-        })
-        edt_pwd1.addTextChangedListener (object : TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                var regex1="""(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,13}$""".toRegex()
-                if(!regex1.containsMatchIn(edt_pwd1.text.toString())){
-                    edt_pwd1.error="密碼格式有誤\n\n\n"
-                }
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-
-        })
-        edt_pwd2.setOnEditorActionListener(object :TextView.OnEditorActionListener{
-            override fun onEditorAction(p0: TextView?, p1: Int, p2: KeyEvent?): Boolean {
-                if(edt_pwd1.text.toString()!=edt_pwd2.text.toString()){
-                    edt_pwd2.error="兩者密碼不同\n\n\n"
-                    return true
-                }
-                return false
-            }
-
-        })
-
-        btn_login.setOnClickListener {
-            finish()
-
-        }
-
-        btn_reg.setOnClickListener{
+        btn_con.setOnClickListener{
             setBlurBackground(this,blur_background)
             blur_background.visibility=View.VISIBLE
-            var suc=false
-            if(edt_pwd1.text.toString()=="Asdf789!"&&edt_pwd2.text.toString()=="Asdf789!"&&edt_email.text.toString()=="abc456@mail.com"){
-                reg_suc.visibility=View.VISIBLE
-                suc=true
-            }
-            else{
-                reg_error.visibility=View.VISIBLE
-            }
+            reg_suc.visibility=View.VISIBLE
             Handler().postDelayed({
                 reg_suc.visibility=View.GONE
-                reg_error.visibility=View.GONE
                 blur_background.visibility=View.GONE
-                if(suc){
-                    finish()
-                }
+                finish()
             },2000)
         }
     }
-
     private fun getCityArray(): Array<String?> {
         var jsonText=assets.open("taiwan_city.json").bufferedReader().use{it.readText() }
-        var rootArray=JSONArray(jsonText)
+        var rootArray= JSONArray(jsonText)
         var cityArray= arrayOfNulls<String>(rootArray.length())
         for(i in 0 until rootArray.length()){
             var cityObject=rootArray.getJSONObject(i)
@@ -213,7 +151,7 @@ class RegisterScreen : AppCompatActivity() {
 
     private fun getCountryArray(city:String):Array<String?>{
         var jsonText=assets.open("taiwan_city.json").bufferedReader().use{it.readText() }
-        var rootArray=JSONArray(jsonText)
+        var rootArray= JSONArray(jsonText)
         for(i in 0 until rootArray.length()){
             var cityObject=rootArray.getJSONObject(i)
             var getCity=cityObject.getString("name")
@@ -273,17 +211,19 @@ class RegisterScreen : AppCompatActivity() {
         return checkNum%10==0
     }
 
-    fun setBlurBackground(context: Context, imgView:ImageView){
+    fun setBlurBackground(context: Context, imgView: ImageView){
         var screenShoot=window.decorView.drawToBitmap()
         var width=windowManager.defaultDisplay.width
         var height=windowManager.defaultDisplay.height
         var new= Bitmap.createBitmap(screenShoot,0,0,width,height)
         imgView.load(new){
-            transformations(BlurTransformation(
+            transformations(
+                BlurTransformation(
                 context,
                 radius = 25f,
                 sampling = 5f
-            ))
+            )
+            )
         }
     }
 }

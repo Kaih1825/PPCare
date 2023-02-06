@@ -16,4 +16,10 @@
     <color name="cardBackgroundColor">#FFFFFF</color>
     <color name="registerColor">#077FB7</color>
     <color name="switchThumbColor">#25D8A5</color>
+    <color name="voCardBackgroundColor">#035981</color>
+    <color name="settingBackGround">#F4F4F4</color>
+    <color name="settingCardbac">#FFFFFF</color>
+    <color name="textColor">#139CC8</color>
+    <color name="settingGray">#DDDDDD</color>
+    <color name="buttonColor">#077FB7</color>
 </resources>

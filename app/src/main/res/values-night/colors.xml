@@ -15,4 +15,10 @@
     <color name="backgroundColor">#010101</color>
     <color name="cardBackgroundColor">#1A2025</color>
     <color name="registerColor">#010101</color>
+    <color name="voCardBackgroundColor">#495A68</color>
+    <color name="settingBackGround">#000000</color>
+    <color name="settingCardbac">#3D3D3D</color>
+    <color name="textColor">#FFFFFFFF</color>
+    <color name="settingGray">#7F7F7F</color>
+    <color name="buttonColor">#656565</color>
 </resources>

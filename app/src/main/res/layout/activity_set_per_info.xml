@@ -42,7 +42,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="註  冊"
+                        android:text="編輯個人資料"
                         android:textColor="@color/white"
                         android:textSize="30dp" />
                 </RelativeLayout>
@@ -225,38 +225,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/a6xxxhdpi_111" />
-
-                    <EditText
-                        android:id="@+id/edt_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:cursorVisible="true"
-                        android:hint="請輸入信箱..."
-                        android:textColor="@color/deepBlue"
-                        android:theme="@style/EditTextThemeNoLine" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -307,108 +275,17 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/a6xxxhdpi_103" />
-
-                    <EditText
-                        android:id="@+id/edt_pwd1"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:cursorVisible="true"
-                        android:drawableRight="@drawable/a6xxxhdpi_110"
-                        android:hint="請輸入8~15含英文密碼"
-                        android:inputType="textPassword"
-                        android:textColor="@color/deepBlue"
-                        android:theme="@style/EditTextThemeNoLine" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/a6xxxhdpi_103" />
-
-                    <EditText
-                        android:id="@+id/edt_pwd2"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
-                        android:cursorVisible="true"
-                        android:hint="再次輸入密碼"
-                        android:imeOptions="actionDone"
-                        android:inputType="textPassword"
-                        android:textColor="@color/deepBlue"
-                        android:theme="@style/EditTextThemeNoLine" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/btn_reg"
+                android:id="@+id/btn_con"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/confirn_button_bac"
-                android:text="註冊" />
+                android:text="完成" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginVertical="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="已經有帳號了嗎？"
-                    android:textColor="@color/lightBlue" />
-
-                <TextView
-                    android:id="@+id/btn_login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="登入"
-                    android:textColor="@color/white" />
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
@@ -443,34 +320,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="註冊成功"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:layout_marginTop="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:visibility="gone"
-            android:id="@+id/reg_error"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="360dp">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/baseline_error_outline_24"/>
-            </androidx.cardview.widget.CardView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="註冊失敗"
+                android:text="修改成功"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:layout_marginTop="10dp"/>
