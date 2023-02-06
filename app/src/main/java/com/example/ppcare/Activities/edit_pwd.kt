@@ -1,15 +1,27 @@
 package com.example.ppcare.Activities
 
+import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.drawToBitmap
+import coil.load
+import coil.transform.BlurTransformation
 import com.example.ppcare.R
 import kotlinx.android.synthetic.main.activity_edit_pwd.*
+import kotlinx.android.synthetic.main.activity_edit_pwd.back
+import kotlinx.android.synthetic.main.activity_edit_pwd.blur_background
+import kotlinx.android.synthetic.main.activity_edit_pwd.btn_con
+import kotlinx.android.synthetic.main.activity_edit_pwd.reg_suc
+import kotlinx.android.synthetic.main.activity_set_per_info.*
 
 class edit_pwd : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,5 +62,30 @@ class edit_pwd : AppCompatActivity() {
             }
 
         })
+        btn_con.setOnClickListener {
+            setBlurBackground(this,blur_background)
+            blur_background.visibility=View.VISIBLE
+            reg_suc.visibility=View.VISIBLE
+            Handler().postDelayed({
+                reg_suc.visibility=View.GONE
+                blur_background.visibility=View.GONE
+                finish()
+            },2000)
+        }
+    }
+    fun setBlurBackground(context: Context, imgView: ImageView){
+        var screenShoot=window.decorView.drawToBitmap()
+        var width=windowManager.defaultDisplay.width
+        var height=windowManager.defaultDisplay.height
+        var new= Bitmap.createBitmap(screenShoot,0,0,width,height)
+        imgView.load(new){
+            transformations(
+                BlurTransformation(
+                context,
+                radius = 25f,
+                sampling = 5f
+            )
+            )
+        }
     }
 }

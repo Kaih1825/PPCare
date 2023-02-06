@@ -9,7 +9,7 @@
     android:fitsSystemWindows="false"
     android:orientation="vertical"
     android:scrollbarThumbVertical="@color/white"
-    tools:context=".Activities.RegisterScreen">
+    tools:context=".Activities.set_per_info">
 
     <ScrollView
         android:layout_width="match_parent"
