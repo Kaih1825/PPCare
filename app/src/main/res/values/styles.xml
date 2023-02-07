@@ -8,4 +8,8 @@
         <item name="colorControlNormal">@color/transparent</item>
         <item name="colorControlActivated">@color/lightBlue</item>
     </style>
+    <style name="round" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
 </resources>
