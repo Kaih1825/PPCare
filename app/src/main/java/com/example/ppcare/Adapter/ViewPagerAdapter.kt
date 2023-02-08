@@ -1,29 +1,25 @@
 package com.example.ppcare.Adapter
 
 import android.app.Activity
-import android.content.Context
-import android.media.Image
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.BaseAdapter
+import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
-import coil.load
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.ppcare.R
+
 
 class ViewPagerAdapter(val activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class ViewHolder(view:View):RecyclerView.ViewHolder(view){
         val imageView:ImageView
+        val blurBackground:ImageView
         init {
             imageView=view.findViewById(R.id.imageView)
+            blurBackground=view.findViewById(R.id.blur_bac)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -39,6 +35,7 @@ class ViewPagerAdapter(val activity: Activity): RecyclerView.Adapter<RecyclerVie
         val v=holder as ViewHolder
         v.apply {
             imageView.setImageDrawable(activity.resources.getDrawable(images[position]))
+            blurBackground.visibility=View.VISIBLE
         }
     }
 }
