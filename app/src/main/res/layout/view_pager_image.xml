@@ -13,10 +13,11 @@
         app:shapeAppearanceOverlay="@style/round"
         android:layout_height="wrap_content"/>
 
-    <ImageView
+    <View
         android:id="@+id/blur_bac"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/imageView"
-        android:background="#8DFFFFFF" />
+        app:shapeAppearanceOverlay="@style/round"
+        android:background="#8DFF0000" />
 </RelativeLayout>

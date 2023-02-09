@@ -54,9 +54,7 @@ class sqlEpid {
                 db!!.execSQL("CREATE TABLE epInfo(id INTEGER PRIMARY KEY,date TEXT,title TEXT,article TEXT)")
 
 
-            }catch (ex:java.lang.Exception){
-                Log.e("INIT", ex.toString(), )
-            }
+            }catch (ex:java.lang.Exception){}
 
             try {
                 var jsonText=activity.assets.open("epid_info.json").bufferedReader().use { it.readText() }
@@ -71,6 +69,17 @@ class sqlEpid {
                 }
             }catch (ex:Exception){}
         }
+        fun getTitle(context: Context,activity: Activity, id: Int): String {
+            init(context,activity)
+            try{
+                var cursor= db!!.rawQuery("SELECT * FROM epInfo WHERE id=${id}", null)
+                cursor.moveToFirst()
+                return cursor.getString(2)
+            }catch (ex:java.lang.Exception){}
+            return "ERROR"
+
+        }
+
         fun getArticle(context: Context,activity: Activity, id: Int): String {
             init(context,activity)
             try{
@@ -79,6 +88,26 @@ class sqlEpid {
                 return cursor.getString(3)
             }catch (ex:java.lang.Exception){}
             return "ERROR"
+
+        }
+
+        fun getCount(context: Context,activity: Activity):Int{
+            init(context,activity)
+            var cursor=db!!.rawQuery("SELECT COUNT(*) FROM epInfo",null)
+            cursor.moveToFirst()
+            return cursor.getInt(0)
+        }
+
+        fun get(context: Context,activity: Activity, id: Int): Array<String> {
+            init(context,activity)
+            try{
+                var cursor= db!!.rawQuery("SELECT * FROM epInfo WHERE id=${id}", null)
+                cursor.moveToFirst()
+                return arrayOf(cursor.getString(1),cursor.getString(2),cursor.getString(3))
+            }catch (ex:java.lang.Exception){
+                Log.e("TAG", ex.toString(), )
+            }
+            return arrayOf("","","","")
 
         }
     }

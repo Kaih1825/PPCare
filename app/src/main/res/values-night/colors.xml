@@ -21,4 +21,7 @@
     <color name="textColor">#FFFFFFFF</color>
     <color name="settingGray">#7F7F7F</color>
     <color name="buttonColor">#656565</color>
+    <color name="epidInfoColor">#1A2025</color>
+    <color name="blackText">#FFFFFFFF</color>
+    <color name="whiteBac">#FF000000</color>
 </resources>

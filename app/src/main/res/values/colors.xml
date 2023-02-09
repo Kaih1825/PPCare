@@ -22,4 +22,7 @@
     <color name="textColor">#139CC8</color>
     <color name="settingGray">#DDDDDD</color>
     <color name="buttonColor">#077FB7</color>
+    <color name="epidInfoColor">#F1F1F3</color>
+    <color name="blackText">#FF000000</color>
+    <color name="whiteBac">#FFFFFFFF</color>
 </resources>

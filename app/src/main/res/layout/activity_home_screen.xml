@@ -5,164 +5,192 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.HomeScreen"
-    android:background="@drawable/a6xxxhdpi_109">
-    <LinearLayout
-        android:id="@+id/btn_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/a6xxxhdpi_102"
-            android:layout_gravity="center"
-            android:gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="設定"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_marginBottom="2dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="24dp"
-        android:text="hsiu0925 V1.0.0"
-        android:textColor="@color/white" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="200dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="VA Care"
-            android:textSize="50dp"
-            android:textColor="@color/white"/>
-        <LinearLayout
-            android:id="@+id/btn_vo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="right">
-            <ImageView
+    android:background="@drawable/a6xxxhdpi_109"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/a6xxxhdpi_98"
-                android:layout_marginRight="10dp"/>
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="200dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VA Care"
+                    android:textColor="@color/white"
+                    android:textSize="50dp" />
+
+                <LinearLayout
+                    android:id="@+id/btn_vo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/a6xxxhdpi_98" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="疫苗護照"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/btn_pcr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/a6xxxhdpi_99" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="PCR預約"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/btn_epid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/a6xxxhdpi_98" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="疫情資訊"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/btn_edu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/a6xxxhdpi_101" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="衛教資訊"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/btn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:src="@drawable/a6xxxhdpi_102" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:text="設定"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="疫苗護照"
-                android:textSize="20dp"
-                android:layout_gravity="bottom"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-        <View
-            android:layout_width="150dp"
-            android:layout_height="1dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"/>
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="24dp"
+                android:text="hsiu0925 V1.0.0"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </ScrollView>
 
-        <LinearLayout
-            android:id="@+id/btn_pcr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="right">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/a6xxxhdpi_99"
-                android:layout_marginRight="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PCR預約"
-                android:textSize="20dp"
-                android:layout_gravity="bottom"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-        <View
-            android:layout_width="150dp"
-            android:layout_height="1dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"/>
-
-        <LinearLayout
-            android:id="@+id/btn_epid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="right">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/a6xxxhdpi_98"
-                android:layout_marginRight="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="疫情資訊"
-                android:textSize="20dp"
-                android:layout_gravity="bottom"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-        <View
-            android:layout_width="150dp"
-            android:layout_height="1dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"/>
-
-        <LinearLayout
-            android:id="@+id/btn_edu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="right">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/a6xxxhdpi_101"
-                android:layout_marginRight="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="衛教資訊"
-                android:textSize="20dp"
-                android:layout_gravity="bottom"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-        <View
-            android:layout_width="150dp"
-            android:layout_height="1dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"/>
-    </LinearLayout>
 </RelativeLayout>
