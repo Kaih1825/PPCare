@@ -7,6 +7,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.util.JsonReader
 import android.util.Log
+import com.example.ppcare.R
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -109,6 +110,44 @@ class sqlEpid {
             }
             return arrayOf("","","","")
 
+        }
+    }
+
+}
+
+class sqlEdu {
+    companion object {
+        var db: SQLiteDatabase? =null
+        fun init(context: Context){
+            db=context.openOrCreateDatabase("db.db",MODE_PRIVATE,null)
+            try {
+                db!!.execSQL("CREATE TABLE eduInfo(id INTEGER PRIMARY KEY,date TEXT,title TEXT,video INTEGER,isStar INTEGER)")
+            }catch (ex:java.lang.Exception){}
+            try{
+                db!!.execSQL("INSERT INTO eduInfo(id,date,title,video,isStar) VALUES(1,'2023/02/10','防疫大作戰 x 奧運羽球國手 - 王齊麟、李洋',${R.raw.video},0)")
+                db!!.execSQL("INSERT INTO eduInfo(id,date,title,video,isStar) VALUES(2,'2023/02/10','防疫大作戰-Continuing preventive measures after vaccination(張厚台醫師，打完疫苗後 還是要做好防疫，英語)',${R.raw.video2},0)")
+                db!!.execSQL("INSERT INTO eduInfo(id,date,title,video,isStar) VALUES(3,'2023/02/10','關於防疫，你可能比國手更厲害',${R.raw.video3},0)")
+                Log.e("TAG", "init: ", )
+            }catch (ex:java.lang.Exception){}
+        }
+
+        fun updateStart(context: Context,id:Int,isStar:Int){
+            init(context)
+            db!!.execSQL("UPDATE eduInfo SET isStar=${isStar} WHERE id=${id}")
+            var a=getIsStar(context)
+        }
+
+        fun getIsStar(context: Context): ArrayList<Boolean> {
+            init(context)
+            var cursor=db!!.rawQuery("SELECT * FROM eduInfo",null)
+            cursor.moveToFirst()
+            var array= arrayListOf(false,false,false)
+            for(i in 0 until cursor.count){
+                var iss=cursor.getInt(4)==1
+                array[i]=iss
+                cursor.moveToNext()
+            }
+            return array
         }
     }
 
