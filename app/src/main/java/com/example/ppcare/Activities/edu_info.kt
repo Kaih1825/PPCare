@@ -76,5 +76,23 @@ class edu_info : AppCompatActivity() {
                 ImageViewCompat.setImageTintList(starArray[i], ColorStateList.valueOf(Color.WHITE))
             }
         }
+
+        btn_star.setOnClickListener {
+            var intent=Intent(this,edu_star::class.java)
+            startActivity(intent)
+        }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        var starArray= arrayOf(star1,star2,star3)
+        var isStarArray= sqlEdu.getIsStar(this)
+        for(i in 0 until 3){
+            if(isStarArray[i]){
+                ImageViewCompat.setImageTintList(starArray[i], ColorStateList.valueOf(Color.YELLOW))
+            }else{
+                ImageViewCompat.setImageTintList(starArray[i], ColorStateList.valueOf(Color.WHITE))
+            }
+        }
     }
 }

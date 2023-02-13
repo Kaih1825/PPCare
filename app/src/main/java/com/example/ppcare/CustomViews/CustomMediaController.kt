@@ -7,11 +7,7 @@ import android.graphics.Color
 import android.util.Log
 import android.view.Gravity
 import android.view.View
-import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.MediaController
-import android.widget.VideoView
+import android.widget.*
 import com.example.ppcare.R
 import kotlinx.android.synthetic.main.activity_edu_info.*
 
@@ -37,6 +33,34 @@ class CustomMediaController(context:Context,var activity:Activity,var layoout:Vi
         layout2.gravity=Gravity.LEFT or Gravity.TOP
         layout2.setMargins(170,20,0,12)
         addView(button,layout2)
+
+//        for (index in 0 until childCount) {
+//            val nextChild = getChildAt(index)
+//            if (nextChild is LinearLayout) {
+//                val linearLayout = nextChild as LinearLayout
+//                for (i in 0 until linearLayout.childCount) {
+//                    if (i == 0 && linearLayout.getChildAt(i) is LinearLayout) {
+//                        val linearLayoutControlPanel = linearLayout.getChildAt(i) as LinearLayout
+//                        val len = linearLayoutControlPanel.childCount
+//                        if (len > 0) {
+//                            // index = 0, pre button, just hide it
+//                            val buttonPre = linearLayoutControlPanel.getChildAt(0)
+//                            var videoView2=view as VideoView
+//                            buttonPre.setOnClickListener {
+//                                videoView2.seekTo(videoView2.currentPosition-10000)
+//                            }
+//                            // index = len - 1, next button, change icon to fullscreen
+//                            val buttonNex = linearLayoutControlPanel.getChildAt(len - 1)
+//                            buttonNex.setOnClickListener {
+//                                videoView2.seekTo(videoView2.currentPosition+10000)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+
+
     }
 
     fun addFullButton(view: View?):View{
@@ -69,6 +93,7 @@ class CustomMediaController(context:Context,var activity:Activity,var layoout:Vi
                 videoView.resume()
             }
         }
+
         return stop
     }
 }

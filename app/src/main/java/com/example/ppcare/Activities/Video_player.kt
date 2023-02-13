@@ -27,5 +27,6 @@ class video_player : AppCompatActivity() {
         txt_title.text=intent.getStringExtra("title")
         txt_date.text=intent.getStringExtra("date")
         videoView.start()
+
     }
 }
